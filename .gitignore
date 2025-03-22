@@ -24,7 +24,7 @@ __pycache__/
 *.DS_Store
 
 # Файлы статики (если вы используете collectstatic)
-static/
+#static/
 
 # Файлы медиа (если вы используете медиа файлы)
 media/
