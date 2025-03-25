@@ -1,0 +1,31 @@
+ul {
+    list-style-type: none;
+}
+
+li {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    padding: 20px 88px;
+    background-color: seagreen;
+    color: bisque;
+    font-size: 23px;
+}
+.menu{
+    display: flex;
+}
+.menu-link{
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.bi-person{
+    font-size: 100px;
+    margin-left: 30%;
+}

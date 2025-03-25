@@ -1,0 +1,13 @@
+
+<span class="user">
+    {% if request.user.is_authenticated %}
+        Hello {{ request.user.first_name|default:request.user.username }},
+        <form action="{% url 'logout' %}" method="post" style="display: inline;">
+            {% csrf_token %}
+{#            <button class="btn btn-primary" type="submit">Logout</button>#}
+            <a class="menu-link" href="javascript:void(0);" onclick="this.parentNode.submit();">Logout</a>
+        </form>
+    {% else %}
+        <a class="menu-link" href="{% url "login" %}">Log-in</a>
+    {% endif %}
+</span>
