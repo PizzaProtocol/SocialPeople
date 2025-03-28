@@ -24,8 +24,14 @@ a {
     text-decoration: none;
     color: aliceblue;
 }
+.menu-link:hover{
+    color: bisque;
+}
 
 .bi-person{
     font-size: 100px;
-    margin-left: 30%;
+    display: flex;
+    justify-content: center;
+    padding-top: 80px;
 }
+

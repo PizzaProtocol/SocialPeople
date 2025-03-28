@@ -113,21 +113,40 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-BASE_DIR = Path(__file__).resolve().parent.parent
-
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
-    os.path.join(BASE_DIR, 'static'),
 ]
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = 'dashboard'
+# Default primary key field type
+# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # Сессии в БД
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+LOGIN_URL = '/login/'  # Обновлено с '/account/login/' на '/login/'
+LOGIN_REDIRECT_URL = 'dashboard'
+LOGOUT_REDIRECT_URL = '/'
 
+# Email settings
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+DEFAULT_FROM_EMAIL = 'noreply@socialpeople.com'
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = 1025
 
+# Logging
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': 'INFO',
+        },
+    },
+}

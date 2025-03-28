@@ -3,6 +3,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/', include('account.urls')),
-
+    path('account/', include('account.urls')),
+    path('', include('account.urls')),  # Добавляем корневой путь
 ]

@@ -8,14 +8,14 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-3"></div>
+            <div class="col-3">
+            </div>
             <div class="col-2"></div>
             <div class="col-3">
                 <div class="login-form">
-                <i class="bi bi-person"></i>
+                    <i class="bi bi-person"></i>
                     <form action="{% url 'login' %}" method="post">
                         {% csrf_token %}
-
                         <div class="md-3">
                             <label for="{{ form.username.id_for_label }}" class="form-label">Username</label>
                             {{ form.username|add_class:"form-control" }}
@@ -33,8 +33,18 @@
                         </div>
 
                         <input type="hidden" name="next" value="{{ next }}"/>
-                        <button type="submit" class="btn btn-primary w-100">Log-in</button>
+                        <button type="submit" class="btn btn-success w-100">Log-in</button>
                     </form>
+                    <p>
+                        <a href="{% url "password_reset" %}">
+                            Forgotten your password?
+                        </a>
+                    <p>
+                        Please, use the following form to log-in.
+                        If you don't have an account
+                        <a href="{% url "register" %}">register here</a>.
+                    </p>
+                    </p>
                 </div>
             </div>
             <div class="col-3"></div>
