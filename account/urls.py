@@ -1,6 +1,8 @@
 from django.urls import path
 from django.contrib.auth.views import LoginView, LogoutView, PasswordChangeView, PasswordChangeDoneView, PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('login/', LoginView.as_view(
@@ -30,4 +32,10 @@ urlpatterns = [
     ), name='password_reset_complete'),
     path('', views.dashboard, name='dashboard'),
     path('register/', views.register, name='register'),
+
+
+    path('edit_profile/', views.edit_profile, name='edit_profile'),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

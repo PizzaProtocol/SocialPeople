@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Edit your account{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <div class="card shadow-sm border-0 mt-5">
+                    <div class="card-body p-4">
+                        <div class="text-center mb-4">
+                            <h1>Edit your account</h1>
+                            <p>You can edit your account using the following form:</p>
+                        </div>
+                    </div>
+                </div>
+                <form method="post" enctype="multipart/form-data">
+                    {{ user_form.as_p }}
+                    {{ profile_form.as_p }}
+                    {% csrf_token %}
+{#                            <p><input type="submit" value="Save changes"></p>#}
+                    <button class="btn btn btn-success btn-lg">Save changes</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+

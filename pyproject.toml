@@ -1,10 +1,17 @@
 [project]
 name = "socialpeople"
 version = "0.1.0"
-description = "Add your description here"
-readme = "README.md"
-requires-python = ">=3.13"
+description = "A Django-based social network project"
 dependencies = [
     "django>=5.1.7",
-    "django-widget-tweaks>=1.5.0",
+    "django-debug-toolbar>=5.1.0",
+    "django-widget-tweaks",
 ]
+license = "MIT"  # Простая строка вместо таблицы
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["SocialPeople", "account"]  # Явно указываем пакеты
